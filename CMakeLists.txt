@@ -3,4 +3,4 @@ project(cplusplus_puzzles)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(cplusplus_puzzles codechef/compete/CSTR2020/ELECTRIC.cpp)
+add_executable(cplusplus_puzzles codechef/compete/2020/BYTR20B/BATTERY.cpp)
