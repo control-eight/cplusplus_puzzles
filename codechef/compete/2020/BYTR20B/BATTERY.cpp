@@ -28,6 +28,10 @@ T Read() {
     return a;
 }
 
+iterator Test() {
+
+}
+
 int FindMax(const vector<int>& energy, int t, int limit, lli current,
             unordered_map<const key_tuple, int, key_hash, std::equal_to<>> &cache, int actions) {
     if (t > limit) {
