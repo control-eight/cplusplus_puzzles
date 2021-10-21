@@ -1,0 +1,3 @@
+#!/bin/bash
+res = $(/Users/oleksandrbykovskyi/Projects/cplusplus_puzzles/codechef/compete/2021/JAN21B/a.out < /Users/oleksandrbykovskyi/Projects/cplusplus_puzzles/cmake-build-debug/0.in)
+echo "${res}"
