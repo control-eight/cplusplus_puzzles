@@ -207,3 +207,39 @@ vector<vector<int>> FindMinSubs(const vector<int> &cards, const int Y) {
     }
     return subs;
 }
+
+lli closest(lli v1, lli v2, lli target) {
+    if (target - v1 >= v2 - target) {
+        return v2;
+    } else {
+        return v1;
+    }
+}
+
+int findClosest(const vector<lli>& v, lli lo, lli hi, lli target) {
+    if (target <= v[lo]) {
+        return v[lo];
+    }
+    if (target >= v[hi - 1]) {
+        return v[hi - 1];
+    }
+    lli mid = 0;
+    while (lo < hi) {
+        mid = lo + (hi - lo) / 2;
+        if (v[mid] == target) {
+            return v[mid];
+        }
+        if (target < v[mid]) {
+            if (mid > 0 && target > v[mid - 1]) {
+                return closest(v[mid - 1], v[mid], target);
+            }
+            hi = mid;
+        } else {
+            if (mid < hi - 1 && target < v[mid + 1]) {
+                return closest(v[mid], v[mid + 1], target);
+            }
+            lo = mid + 1;
+        }
+    }
+    return v[mid];
+}
