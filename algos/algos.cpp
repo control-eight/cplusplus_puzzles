@@ -243,3 +243,20 @@ int findClosest(const vector<lli>& v, lli lo, lli hi, lli target) {
     }
     return v[mid];
 }
+
+int binarySearch(const vector<int>& v, int K) {
+    int lo = 0;
+    int hi = v.size();
+    int res = -1;
+    while (lo < hi) {
+        int mid = lo + (hi - lo) / 2;
+        lli k = calc(v, mid);
+        if (k <= K) {
+            res = mid;
+            lo = mid + 1;
+        } else {
+            hi = mid;
+        }
+    }
+    return res;
+}
